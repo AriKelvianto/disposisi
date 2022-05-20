@@ -22,12 +22,31 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        <?php
+                                        $no =1;
+                                        foreach ($user as $user){
+                                    echo " <tr>
+                                            <td>$no</td>
+                                            <td>$user->username</td>
+                                            <td>$user->email</td>
+                                            <td>$user->phone</td>
+                                            <td>$user->role</td>
+                                            <td width='15%'>
+                                            <a href=".base_url('admin/user/getedit/'.$user->id)." class='btn btn-sm btn-info'><i class='fas fa-edit'></i>Edit</a>
+                                            <a href=".base_url('admin/user/getedit/'.$user->id)." class='btn btn-sm btn-danger' onclick= 'return confirm(\"apakah anda ingin menghapus data ini ?\");'><i class='fas fa-trash'></i>Hapus</a>
+                                            </td>
+                                            ";
+                                            $no++;
+                                        }
+                                        ?>
+                                        </tbody>
                                 </table>
                             </div>
 
                             </div>
                         </div>
                         <div style="height: 100vh"></div>
-                        <div class="card mb-4"><div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div></div>
+                       
                     </div>
                 </main>
